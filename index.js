@@ -10,13 +10,13 @@ const fruits = [
     "banana",
     "grape",
     "cherry",
-    "blueberry",
+    "kiwi",
     "apple",
     "strawberry",
-    "raspberry",
+    "tangerine",
     "pineapple",
     "pear",
-    "plum"
+    "watermelon"
 ];
 
 const veggies = [
@@ -77,45 +77,55 @@ app.get('/fruits/:name', (req, res) => {
         "banana",
         "grape",
         "cherry",
-        "blueberry",
+        "kiwi",
         "apple",
         "strawberry",
-        "raspberry",
+        "tangerine",
         "pineapple",
         "pear",
-        "plum"
+        "watermelon"
     ];
     // Switch statement that responds based on the match from my array
     switch (req.params.name) {
         case "banana":
             res.send(`${fruits[0]}`);
+            res.send("🍌");
             break;
         case "grape":
             res.send(`${fruits[1]}`);
+            res.send("🍇");
             break;
         case "cherry":
             res.send(`${fruits[2]}`)   
+            res.send("🍒");
             break;
-        case "blueberry":
+        case "kiwi":
             res.send(`${fruits[3]}`);
+            res.send("🥝");
             break;
         case "apple":
             res.send(`${fruits[4]}`);
+            res.send("🍎");
             break;
         case "strawberry":
             res.send(`${fruits[5]}`);
+            res.send("🍓");
             break;
-        case "raspberry":
+        case "tangerine":
             res.send(`${fruits[6]}`);
+            res.send("🍊");
             break;
         case "pineapple":
             res.send(`${fruits[7]}`);
+            res.send("🍍");
             break;
         case "pear":
             res.send(`${fruits[8]}`);
+            res.send("🍐");
             break;
-        case "plum":
+        case "watermelon":
             res.send(`${fruits[9]}`);
+            res.send("🍉");
         default:
             res.send("Please make a valid selection.");
             break;
