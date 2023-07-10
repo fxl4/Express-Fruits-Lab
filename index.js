@@ -65,6 +65,12 @@ app.get('/fruits', (req, res) => {
     res.send(`${fruits}`)
 });
 
+app.get('/fruits/sort', (req, res) => {
+    // implement sort
+    let sortedFruits = fruits.sort();
+    res.send(`${sortedFruits}`)
+});
+
 app.get('/fruits/:name', (req, res) => {
     // List my array of fruits
     const fruits = [
@@ -120,10 +126,65 @@ app.get('/veggies', (req, res) => {
     res.send(`${veggies}`)
 });
 
-app.get('/veggies/:name', (req, res) => {
-    //your code here
-    // HINT - you can use a higher-order array method
+app.get('/veggies/sort', (req, res) => {
+    // implement sort on veggies
+    let sortedVeggies = veggies.sort();
+    res.send(`${sortedVeggies}`)
 });
+
+app.get('/veggies/:name', (req, res) => {
+    const veggies = [
+        "spinach",
+        "broccoli",
+        "cauliflower",
+        "asparagus",
+        "celery",
+        "onion",
+        "beet",
+        "brussel sprout",
+        "artichoke",
+        "cabbage"
+    ];
+
+    switch (req.params.name) {
+        case "spinach":
+            res.send(`${veggies[0]}`);
+            break;
+        case "broccoli":
+            res.send(`${veggies[1]}`);
+            break;
+        case "cauliflower":
+            res.send(`${veggies[2]}`)   
+            break;
+        case "asparagus":
+            res.send(`${veggies[3]}`);
+            break;
+        case "celery":
+            res.send(`${veggies[4]}`);
+            break;
+        case "onion":
+            res.send(`${veggies[5]}`);
+            break;
+        case "beet":
+            res.send(`${veggies[6]}`);
+            break;
+        case "brussel sprout":
+            res.send(`${veggies[7]}`);
+            break;
+        case "artichoke":
+            res.send(`${veggies[8]}`);
+            break;
+        case "cabbage":
+            res.send(`${veggies[9]}`);
+        default:
+            res.send("Please make a valid selection.");
+            break;
+        }
+});
+
+app.get('*', (req, res) => {
+    res.send('404 Not Found')
+  })
 
 app.listen(PORT, () => console.log(`Serving up delicious fruits on port ${PORT} 🍒`))
 
